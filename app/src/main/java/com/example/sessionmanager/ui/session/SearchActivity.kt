@@ -2,6 +2,7 @@ package com.example.sessionmanager.ui.session
 
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -44,6 +45,10 @@ class SearchActivity : AppCompatActivity() {
         searchbtn.setOnClickListener {
             val sessionId = searchinput.text.toString().trim()
             if (sessionId.isNotEmpty()) {
+
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(it.windowToken, 0)
+
                 sessionViewModel.getSessionById(sessionId) { session ->
                     if (session != null) {
                         result.visibility= View.VISIBLE

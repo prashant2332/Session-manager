@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -37,6 +38,8 @@ class StartSessionActivity : AppCompatActivity() {
                 if (exists) {
                         Toast.makeText(this, "Session ID already exists!", Toast.LENGTH_SHORT).show()
                 } else {
+                    val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(it.windowToken, 0)
                     val intent = Intent(this, CaptureActivity::class.java)
                     intent.putExtra("SESSION_ID", sessionId)
                     startActivity(intent)
