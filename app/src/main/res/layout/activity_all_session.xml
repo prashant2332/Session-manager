@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Saved Sessions"
+        android:layout_marginBottom="5dp"
+        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:layout_height="80dp"/>
+
+    <TextView
+        android:id="@+id/noSessionsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No saved sessions found"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="20dp"
+        android:textColor="@color/black"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sessionsRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

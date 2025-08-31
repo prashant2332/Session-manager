@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Session details"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:typeface="sans"
+        android:layout_marginBottom="15dp"
+        android:paddingBottom="12dp"/>
+
+    <TextView
+        android:id="@+id/detailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Session details"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:typeface="sans"
+        android:layout_marginBottom="15dp"
+        android:paddingBottom="12dp"/>
+
+    <TextView
+        android:id="@+id/noImagesText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No images found for this session"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:visibility="gone"
+        android:padding="20dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detailImagesRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>
